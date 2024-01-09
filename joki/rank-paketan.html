@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joki Paketan MLBB</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+  .bg-blue-500:hover .text-gray-600 {
+    color: white;
+    transition: color 0.3s;
+  }
+</style>
+
+</head>
+<body class="bg-gray-900 text-white p-6">
+  <div class="max-w-md mx-auto">
+    <h1 class="text-3xl font-bold mb-6 text-center">Joki Paketan MLBB</h1>
+
+    <div class="bg-gray-800 text-white shadow-md rounded-lg p-4 mb-6">
+      <h2 class="text-xl font-semibold mb-4">Input ID</h2>
+        <div class="mb-4">
+    <label for="type" class="block text-gray-200">Login Via:</label>
+    <select id="type" name="type" required class="bg-gray-900 w-full border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500">
+    	<option value="" disabled selected hidden>Select</option>
+        <option value="Moonton">Moonton (Rekomendasi)</option>
+        <option value="Facebook">Facebook</option>
+        <option value="TikTok">TikTok</option>
+        <option value="VK">VK</option>
+    </select>
+</div>
+        <div class="mb-4">
+          <label for="user" class="block text-gray-200">Username/Phone number/Email:</label>
+          <input type="text" placeholder="Your username/phone number/email" id="user" name="user" required class="bg-gray-900 w-full border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500">
+        </div>
+        <div class="mb-4">
+          <label for="password" class="block text-gray-200">Password:</label>
+          <input type="password" placeholder="********" id="password" name="password" required class="bg-gray-900 w-full border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500">
+        </div>
+        <div class="mb-4">
+          <label for="request-hero" class="block text-gray-200">Request hero:</label>
+          <input type="text" placeholder="Saber roam" id="request-hero" name="request-hero" required class="bg-gray-900 w-full border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500">
+        </div>
+        <div class="mb-4">
+          <label for="message" class="block text-gray-200">Message:</label>
+          <input type="text" placeholder="Semangat ya" id="message" name="message" required class="bg-gray-900 w-full border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500">
+        </div>
+    </div>
+
+    <div class="bg-gray-800 text-white shadow-md rounded-lg p-4 mb-6">
+      <h2 class="text-xl font-semibold mb-4">Pilih Paket</h2>
+      <h4 class="text-xl font-semibold mb-4">Paket MCL</h4>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="bg-gray-900 rounded-md p-4 cursor-pointer transition duration-300" onclick="selectPackage(1)">
+          <h3 id="package1" class="text-sm font-semibold">MCL Weekly</h3>
+          <p class="text-sm text-gray-200">Rp. 100.000</p>
+        </div>
+        <div class="bg-gray-900 rounded-md p-4 cursor-pointer transition duration-300" onclick="selectPackage(2)">
+          <h3 id="package2" class="text-sm font-semibold">MCL Gold</h3>
+          <p class="text-sm text-gray-200">Rp. 150.000</p>
+        </div>
+        <h4 class="text-xl font-semibold mt-4">Paket Mythic Grading</h4><br>
+        <div class="bg-gray-900 rounded-md p-4 cursor-pointer transition duration-300" onclick="selectPackage(3)">
+          <h3 id="package3" class="text-sm font-semibold">Mythic Grading (15 Star)</h3>
+          <p class="text-sm text-gray-200">Rp. 250.000</p>
+        </div>
+        <br>
+        <h4 class="text-xl font-semibold mt-4">Paket GrandMaster</h4><br>
+        <div class="bg-gray-900 rounded-md p-4 cursor-pointer transition duration-300" onclick="selectPackage(4)">
+          <h3 id="package4" class="text-sm font-semibold">GrandMaster 5 -> Epic 5</h3>
+          <p class="text-sm text-gray-200">Rp. 125.000</p>
+        </div>
+        <div class="bg-gray-900 rounded-md p-4 cursor-pointer transition duration-300" onclick="selectPackage(5)">
+          <h3 id="package5" class="text-sm font-semibold">GrandMaster 5 -> Legend 5</h3>
+          <p class="text-sm text-gray-200">Rp. 300.000</p>
+        </div>
+        <div class="bg-gray-900 rounded-md p-4 cursor-pointer transition duration-300" onclick="selectPackage(6)">
+          <h3 id="package6" class="text-sm font-semibold">GrandMaster 5 -> Mythic</h3>
+          <p class="text-sm text-gray-200">Rp. 500.000</p>
+        </div>
+        <br><br>
+        <h4 class="text-xl font-semibold mt-4">Paket Epic</h4><br>
+        <div class="bg-gray-900 rounded-md p-4 cursor-pointer transition duration-300" onclick="selectPackage(7)">
+          <h3 id="package7" class="text-sm font-semibold">Epic 5 -> Legend 5</h3>
+          <p class="text-sm text-gray-200">Rp. 170.000</p>
+        </div>
+        <div class="bg-gray-900 rounded-md p-4 cursor-pointer transition duration-300" onclick="selectPackage(8)">
+          <h3 id="package8" class="text-sm font-semibold">Epic 5 -> Mythic</h3>
+          <p class="text-sm text-gray-200">Rp. 380.000</p>
+        </div>
+        
+        <h4 class="text-xl font-semibold mt-4">Paket Legend</h4><br>
+        <div class="bg-gray-900 rounded-md p-4 cursor-pointer transition duration-300" onclick="selectPackage(9)">
+          <h3 id="package9" class="text-sm font-semibold">Legend 5 -> Mythic</h3>
+          <p class="text-sm text-gray-200">Rp. 200.000</p>
+        </div>
+        <div class="bg-gray-900 rounded-md p-4 cursor-pointer transition duration-300" onclick="selectPackage(10)">
+          <h3 id="package10" class="text-sm font-semibold">Legend 5 -> Mythic Honor 25</h3>
+          <p class="text-sm text-gray-200">Rp. 700.000</p>
+        </div>
+        <div class="bg-gray-900 rounded-md p-4 cursor-pointer transition duration-300" onclick="selectPackage(11)">
+          <h3 id="package11" class="text-sm font-semibold">Legend 5 -> Mythic Glory 50</h3>
+          <p class="text-sm text-gray-200">Rp. 1.300.000</p>
+        </div>
+        <div class="bg-gray-900 rounded-md p-4 cursor-pointer transition duration-300" onclick="selectPackage(12)">
+          <h3 id="package12" class="text-sm font-semibold">Legend 5 -> Mythic Immortal 100</h3>
+          <p class="text-sm text-gray-200">Rp. 2.800.000</p>
+        </div>
+        
+        <h4 class="text-xl font-semibold mt-4">Paket Mythic</h4><br>
+        <div class="bg-gray-900 rounded-md p-4 cursor-pointer transition duration-300" onclick="selectPackage(13)">
+          <h3 id="package13" class="text-sm font-semibold">Mythic 1 -> Myhtic Honor 25</h3>
+          <p class="text-sm text-gray-200">Rp. 500.000</p>
+        </div>
+        <div class="bg-gray-900 rounded-md p-4 cursor-pointer transition duration-300" onclick="selectPackage(14)">
+          <h3 id="package14" class="text-sm font-semibold">Mythic 1 -> Myhtic Glory 50</h3>
+          <p class="text-sm text-gray-200">Rp. 1.170.000</p>
+        </div>
+        <div class="bg-gray-900 rounded-md p-4 cursor-pointer transition duration-300" onclick="selectPackage(15)">
+          <h3 id="package15" class="text-sm font-semibold">Mythic 1 -> Myhtic Immortal 100</h3>
+          <p class="text-sm text-gray-200">Rp. 2.670.000</p>
+        </div>
+        <br>
+        <h4 class="text-xl font-semibold mt-4">Paket Mythic Honor</h4><br>
+        <div class="bg-gray-900 rounded-md p-4 cursor-pointer transition duration-300" onclick="selectPackage(16)">
+          <h3 id="package16" class="text-sm font-semibold">Mythic Honor 25 -> Mythic Glory 50</h3>
+          <p class="text-sm text-gray-200">Rp. 670.000</p>
+        </div>
+        <div class="bg-gray-900 rounded-md p-4 cursor-pointer transition duration-300" onclick="selectPackage(17)">
+          <h3 id="package17" class="text-sm font-semibold">Mythic Honor 25 -> Mythic Immortal 100</h3>
+          <p class="text-sm text-gray-200">Rp. 2.170.000</p>
+        </div>
+        
+        <h4 class="text-xl font-semibold mt-4">Paket Mythic Glory</h4><br>
+        <div class="bg-gray-900 rounded-md p-4 cursor-pointer transition duration-300" onclick="selectPackage(18)">
+          <h3 id="package18" class="text-sm font-semibold">Mythic Glory 50 -> Mythic Immortal 100</h3>
+          <p class="text-sm text-gray-200">Rp. 1.500.000</p>
+        </div>
+      </div>
+    </div>
+    
+<div class="bg-gray-800 text-white shadow-md rounded-lg p-4 mb-6">
+  <h2 class="text-xl font-semibold mb-4">Metode Pembayaran</h2>
+    <div class="mb-4">
+      <label for="payment" class="block text-gray-200">Pilih Metode Pembayaran:</label>
+      <select id="payment" name="payment" required class="bg-gray-900 w-full border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500">
+        <option value="" disabled selected hidden>Select Payment Method</option>
+        <option value="DANA">DANA</option>
+        <option value="OVO">OVO</option>
+        <option value="GoPay">GoPay</option>
+        <option value="QRIS">QRIS - All Payment</option>
+      </select>
+    </div>
+    <button type="submit" class="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300">Beli</button>
+</div>
+
+  </div>
+
+  <script>
+    let phoneNumber = '62895341624750';
+    let selectedPackage = null;
+
+    function selectPackage(packageNumber) {
+      const packageElement = document.getElementById(`package${packageNumber}`);
+      if (selectedPackage !== null) {
+        selectedPackage.classList.remove('bg-blue-500', 'text-white');
+      }
+      packageElement.parentElement.classList.add('bg-blue-500', 'text-white');
+      selectedPackage = packageElement.parentElement;
+    }
+    
+    function collectData() {
+    const loginVia = document.getElementById('type').value;
+  const username = document.getElementById('user').value;
+  const password = document.getElementById('password').value;
+  const requestHero = document.getElementById('request-hero').value;
+  const message = document.getElementById('message').value;
+  const paymentMethod = document.getElementById('payment').value;
+
+    const collectedData = `*Login Via:* ${loginVia}\n*Username/Phone number/Email:* ${username}\n*Password:* ${password}\n*Request Hero:* ${requestHero}\n*Message:* ${message}\n*Pilihan Paket:* ${selectedPackage ? selectedPackage.innerText.trim() : 'Belum dipilih'}\n*Metode Pembayaran:* ${paymentMethod}`;
+
+  return collectedData;
+}
+
+function validateInputs() {
+  const loginVia = document.getElementById('type').value;
+  const username = document.getElementById('user').value;
+  const password = document.getElementById('password').value;
+  const requestHero = document.getElementById('request-hero').value;
+  const message = document.getElementById('message').value;
+  const paymentMethod = document.getElementById('payment').value;
+
+  if (loginVia === '' || username === '' || password === '' || requestHero === '' || message === '' || paymentMethod === '') {
+    alert('Mohon lengkapi semua input sebelum melanjutkan.');
+    return false;
+  }
+
+  return true;
+}
+
+const beliButton = document.querySelector('button[type="submit"]');
+beliButton.addEventListener('click', function(event) {
+  event.preventDefault();
+
+  const inputsValid = validateInputs();
+
+  if (inputsValid) {
+    const collectedData = collectData();
+    console.log(collectedData);
+
+    const textParameter = encodeURIComponent(collectedData);
+
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${textParameter}`;
+
+    window.open(whatsappURL, '_blank');
+  }
+});
+
+  </script>
+  
+</body>
+</html>
